@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form input</title>
+    <style>
+        .main-input {
+            border: 2px solid blue;
+            margin-bottom: 10px;
+        }
+
+        .non-main-input {
+            border: 2px solid grey;
+            margin-bottom: 10px;
+        }
+
+        .error {
+            border: 2px solid red;
+        }
+
+        button {
+            all: unset;
+            width: 200px;
+            height: 40px;
+            background-color: blue;
+            text-align: center;
+            color: white;
+            border-radius: 5px;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form id="login">
+        <div class="left">
+
+        </div>
+        <h3>Name</h3>
+        <input type="text" class="main-input" name="Name" required>
+        <div>
+            <h3>Age</h1>
+                <input type="number" class="main-input" name="Age" required>
+        </div>
+        <div>
+            <h3>Surname</h1>
+                <input type="text" class="not-main-input" name="Surname">
+        </div>
+        <div>
+            <h3>About you</h1>
+                <input type="text" class="main-input" name="AboutYou" required>
+        </div>
+        <div>
+            <h3>Email address</h1>
+                <input type="email" class="main-input" name="EmailAddress" required>
+        </div>
+        <div>
+            <h3>What is JS</h1>
+                <input type="text" class="main-input" name="WhatIsJS" required>
+        </div>
+        <div>
+            <h3>Phone number</h1>
+                <input type="tel" class="not-main-input" name="PhoneNumber">
+        </div>
+        <div>
+            <h3>What is HTML</h1>
+                <input type="text" class="main-input" name="WhatIsHTML" required>
+        </div>
+        <div>
+            <h3>Your matushka name</h3>
+            <input type="text" class="not-main-input" name="YourMomName">
+        </div>
+        <div>
+            <h3>What is CSS</h3>
+            <input type="text" class="main-input" name="WhatIsCSS" required>
+        </div>
+        <div>
+            <h3>Your batya name</h3>
+            <input type="text" class="not-main-input" name="YourDadName">
+        </div>
+        <div>
+            <h3>Your favourite car</h3>
+            <input type="text" class="not-main-input" name="YourFavouriteCar">
+        </div>
+        <button type="button" onclick="saveChanges()">Save changes</button>
+    </form>
+
+
+
+    <!-- <form name="login">
+        <input type="text" placeholder="name" name="name">
+        <input type="text" placeholder="surname" name="surname">
+        <input type="number" placeholder="age" name="age">
+        <input type="email" placeholder="email" name="email">
+        <input type="password" placeholder="password" name="password">
+        <button>send</button>
+    </form>  -->
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
