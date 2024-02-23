@@ -4,100 +4,180 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form input</title>
+    <title>Document</title>
     <style>
-        .main-input {
-            border: 2px solid blue;
-            margin-bottom: 10px;
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            outline: none;
         }
 
-        .non-main-input {
-            border: 2px solid grey;
-            margin-bottom: 10px;
+        form .main {
+            width: fit-content;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+            align-items: center;
+        }
+
+        form .box {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        label {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        label span {
+            text-transform: capitalize;
+        }
+
+        label input {
+            padding: 8px 10px;
+            border-radius: 10px;
+            border: 1px solid #c4c4c4;
+        }
+
+        .but {
+            display: flex;
+            justify-content: center;
+            padding-top: 40px;
+
+            button {
+                all: unset;
+                background-color: #4200FF;
+                color: #fff;
+                width: 200px;
+                height: 50px;
+                text-align: center;
+                font-size: 18px;
+                border-radius: 15px;
+                cursor: pointer;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+            }
+        }
+
+        .text {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            padding-top: 20px;
+            padding-bottom: 25px;
+        }
+
+        .req {
+            color: #4200FF;
+        }
+
+        .req input {
+            border-color: #4200FF;
         }
 
         .error {
-            border: 2px solid red;
+            color: red;
         }
 
-        button {
-            all: unset;
-            width: 200px;
-            height: 40px;
-            background-color: blue;
-            text-align: center;
-            color: white;
-            border-radius: 5px;
-            margin: 10px;
+        .error input {
+            border-color: red;
         }
     </style>
 </head>
 
 <body>
 
-    <form id="login">
-        <div class="left">
 
+    <form name="signup">
+        <div class="text">
+            <h3>All: <span id="all">12</span></h3>
+            <h3>Need: <span id="need">7</span></h3>
+            <h3>Success: <span id="successcurr">0</span>
+                /
+                <span id="successtotal">12</span>
+            </h3>
+            <h3>Error: <span id="errorcurr">0</span>
+                /
+                <span id="errortotal">7</span>
+            </h3>
         </div>
-        <h3>Name</h3>
-        <input type="text" class="main-input" name="Name" required>
-        <div>
-            <h3>Age</h1>
-                <input type="number" class="main-input" name="Age" required>
+
+        <div class="main">
+
+            <div class="box">
+                <label class="req" for="name">
+                    <span>name</span>
+                    <input id="name" type="text" name="name">
+                </label>
+
+                <label for="surname">
+                    <span>surname</span>
+                    <input id="surname" type="text" name="surname">
+                </label>
+
+                <label class="req" for="email">
+                    <span>email adress</span>
+                    <input id="email" type="text" name="email">
+                </label>
+
+                <label for="phone">
+                    <span>phone number</span>
+                    <input id="phone" type="text" name="phone">
+                </label>
+
+                <label for="name">
+                    <span>your matushka name</span>
+                    <input id="name" type="text" name="name">
+                </label>
+
+                <label for="name">
+                    <span>your batya name</span>
+                    <input id="name" type="text" name="name">
+                </label>
+            </div>
+
+            <div class="box">
+                <label class="req" for="age">
+                    <span>age</span>
+                    <input id="age" type="text" name="age">
+                </label>
+
+                <label class="req" for="about">
+                    <span>about you</span>
+                    <input id="about" type="text" name="about">
+                </label>
+
+                <label class="req" for="javascript">
+                    <span>what is javaScript?</span>
+                    <input id="javascript" type="text" name="javascript">
+                </label>
+
+                <label class="req" for="html">
+                    <span>what is HTML?</span>
+                    <input id="html" type="text" name="html">
+                </label>
+
+                <label class="req" for="css">
+                    <span>what is CSS?</span>
+                    <input id="css" type="text" name="css">
+                </label>
+
+                <label for="car">
+                    <span>your favourite car</span>
+                    <input id="car" type="text" name="car">
+                </label>
+            </div>
         </div>
-        <div>
-            <h3>Surname</h1>
-                <input type="text" class="not-main-input" name="Surname">
+
+        <div class="but">
+            <button>submit</button>
         </div>
-        <div>
-            <h3>About you</h1>
-                <input type="text" class="main-input" name="AboutYou" required>
-        </div>
-        <div>
-            <h3>Email address</h1>
-                <input type="email" class="main-input" name="EmailAddress" required>
-        </div>
-        <div>
-            <h3>What is JS</h1>
-                <input type="text" class="main-input" name="WhatIsJS" required>
-        </div>
-        <div>
-            <h3>Phone number</h1>
-                <input type="tel" class="not-main-input" name="PhoneNumber">
-        </div>
-        <div>
-            <h3>What is HTML</h1>
-                <input type="text" class="main-input" name="WhatIsHTML" required>
-        </div>
-        <div>
-            <h3>Your matushka name</h3>
-            <input type="text" class="not-main-input" name="YourMomName">
-        </div>
-        <div>
-            <h3>What is CSS</h3>
-            <input type="text" class="main-input" name="WhatIsCSS" required>
-        </div>
-        <div>
-            <h3>Your batya name</h3>
-            <input type="text" class="not-main-input" name="YourDadName">
-        </div>
-        <div>
-            <h3>Your favourite car</h3>
-            <input type="text" class="not-main-input" name="YourFavouriteCar">
-        </div>
-        <button type="button" onclick="saveChanges()">Save changes</button>
     </form>
 
-
-
-    <!-- <form name="login">
-        <input type="text" placeholder="name" name="name">
-        <input type="text" placeholder="surname" name="surname">
-        <input type="number" placeholder="age" name="age">
-        <input type="email" placeholder="email" name="email">
-        <input type="password" placeholder="password" name="password">
-        <button>send</button>
-    </form>  -->
 
     <script src="./script.js"></script>
 </body>
